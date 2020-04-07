@@ -2,10 +2,11 @@
 title: nginx的搭建笔记
 categories: []
 date: 2020-04-04 20:03:36
-tags:
+tags: 
+- Nginx
 ---
 
-### 1、安装
+### 安装
 
 ```bash
 // 下载
@@ -31,8 +32,9 @@ cd nginx-1.16.1
 make
 sudo make install
 ```
+<!-- more -->
 
-### 2、环境配置
+### 环境配置
 {% blockquote %}
 源码安装的nginx是无法直接用service或者systemctl来控制服务的（如有必要，可自己书写控制脚本）
 {% endblockquote %}
@@ -41,5 +43,5 @@ sudo make install
 1. 设置`location`模块的`root`路径中，所有目录必须至少是<font color="blue"> 755 </font>权限
 2. 所有的静态资源必须至少是<font color="blue"> 644 </font>权限
 
-### 3、nginx项目配置文件
+### nginx项目配置文件
 
