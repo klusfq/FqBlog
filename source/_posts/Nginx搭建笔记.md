@@ -1,5 +1,5 @@
 ---
-title: nginx的搭建笔记
+title: Nginx搭建笔记
 categories: []
 date: 2020-04-04 20:03:36
 tags: 
@@ -35,13 +35,12 @@ sudo make install
 <!-- more -->
 
 ### 环境配置
-{% blockquote %}
-源码安装的nginx是无法直接用service或者systemctl来控制服务的（如有必要，可自己书写控制脚本）
-{% endblockquote %}
+> 源码安装的nginx是无法直接用service或者systemctl来控制服务的（如有必要，可自己书写控制脚本）
 
 关于启动`nginx`时遇到的<font color="red">403</font>问题：
-1. 设置`location`模块的`root`路径中，所有目录必须至少是<font color="blue"> 755 </font>权限
-2. 所有的静态资源必须至少是<font color="blue"> 644 </font>权限
+1. 设置`location`模块的`root`路径中，所有目录必须至少是<font color="#0066ff"> 755 </font>权限
+2. 所有的静态资源必须至少是<font color="#0066ff"> 644 </font>权限
 
 ### nginx项目配置文件
 
+。。。。。。根据个人项目配置
