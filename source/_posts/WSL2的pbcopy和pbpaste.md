@@ -49,7 +49,7 @@ ln -s /mn/c/Windows/System32/cmd.exe /usr/local/bin/cmd.exe
 
 > ==其中，options的umask和fmask值必须要满足 `wsl2` 下往win文件下写入内容。==
 
-![wsl_conf_automount](https://klusfq.cn/img/wsl_conf_automount.png)
+![WslConfAutomount](https://klusfq.cn/img/wsl_conf_automount.png)
 
 #### <font color="#3a3">3. **将项目脚本放入环境变量中**</font>
 > 关于原项目中的 `cat > [file]` 用法，有一些问题。在我的机器上，它获取 STDIN 失败，所以我进行了一些魔改。

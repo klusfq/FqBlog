@@ -1,12 +1,12 @@
 ---
-title: Nginx搭建笔记
-categories: []
-date: 2020-04-04 20:03:36
-tags: 
+title: Nginx+PHP环境搭建笔记
+date: 2020-06-26 00:40:16
+tags:
 - Nginx
+- PHP
 ---
 
-### 安装
+### nginx安装
 
 ```bash
 // 下载
@@ -41,6 +41,38 @@ sudo make install
 1. 设置`location`模块的`root`路径中，所有目录必须至少是<font color="#0066ff"> 755 </font>权限
 2. 所有的静态资源必须至少是<font color="#0066ff"> 644 </font>权限
 
-### nginx项目配置文件
 
-。。。。。。根据个人项目配置
+
+### nginx访问php-fpm的sock文件，无权限问题
+```bash
+# err_log
+... fpm.sock failed (13: Permission denied) ...
+```
+相关问题：
+- 访问用户权限
+- 文件可访问权限
+
+### `$fastcgi_script_name` 的含义问题
+
+```bash
+# err_log
+FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream ...
+```
+相关问题：
+- nginx的`location`模块中，`root`和`alias`关键字的区别
+- `fastcgi_pass` 和 `fastcgi_param` 项的值
+
+### 关于一个nginx重定向实例
+
+- Before：`https://klusfq.cn/api/module/xxx?yyy`
+
+- After：`https://klusfq.cn/module/index.php/xxx?yyy`
+
+```bash
+rewrite ^/api/([^/.]*)(/[^\?]*)?((\?.*)?)$ /$1/index.php$2$3 break;
+
+# 解析: 
+#       ([^/.]*)    ->  module -> $1
+#       (/[^\?]*)?  ->  /xxx   -> $2
+#       ((\?.*)?)   ->  ?yyy   -> $3
+```
