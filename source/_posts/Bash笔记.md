@@ -24,7 +24,8 @@ tags:
 
 - 客户端配置
 ```bash
-# TCPKeepAlive=yes
+# 配置长链接参数
+TCPKeepAlive=yes
 # Client每隔 60 秒发送一次请求给 Server，然后 Server响应，从而保持连接
 ServerAliveInterval 60
 # Client发出请求后，服务器端没有响应得次数达到3，就自动断开连接，正常情况下，Server 不会不响应
@@ -36,4 +37,19 @@ ServerAliveCountMax 3
 ClientAliveInterval 60
 # Server发出请求后，客户端没有响应得次数达到 10，就自动断开连接，正常情况下，Client不会不响应
 ClientAliveCountMax 10
+```
+
+
+### `git status/commit/log` 中文乱码问题 
+
+
+```bash
+# 配置~/.gitconfig
+
+[core]
+    quotepath=false                 # 解决status
+
+[i18n]
+    commitencoding=utf-8            # 解决commit
+    logoutputencoding=utf-8         # 解决log
 ```
