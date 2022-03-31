@@ -1,0 +1,41 @@
+# Header
+menu:
+  首页: /
+  # 前端: /categories/front-end
+  # 后端: /categories/back-end
+  标签: /tags
+  归档: /archives
+  # 订阅: /atom.xml
+  # 关于: /about
+
+# Content
+excerpt_link: 阅读更多
+content_max_width: 800px
+
+# Sidebar
+author:
+  name: Klusfq
+  work: Backend Programmer
+  location: Beijing, China
+  avatar_url: /images/favicon.ico
+
+# Links:
+links:
+  - svg: ./source/svg/github.svg
+    url: https://github.com/klusfq
+  - svg: ./source/svg/weibo.svg
+    url: https://weibo.com/klusfq
+
+# github comment 
+git_commit:
+  enable: false
+  client_id: 
+  client_secret: 
+  repo: 
+  owner: 
+  admin:
+    - 
+  per_page: 10
+
+# Miscellaneous
+favicon: /images/favicon.ico
