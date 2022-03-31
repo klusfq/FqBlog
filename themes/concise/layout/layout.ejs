@@ -130,7 +130,8 @@
             var pagenext = $('#pagenext');
             var avg = (pageprev.width() + pagenext.width()) / 2
 
-            if(space > avg) {
+            // if(space > avg) {
+            if (false) {
                 var len = space - avg / 2;
                 var styles = {position: 'fixed', top: '50%', marginTop: - (pageprev.width() + pagenext.width()) / 4}
                 pageprev.css($.extend({left: hw + len}, styles));
