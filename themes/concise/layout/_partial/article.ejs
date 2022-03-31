@@ -3,11 +3,11 @@
     <header class="article-header">
         <% if( view ) { %>
         <h1 itemprop="name" style="font-style:italic;color:#42A5F5;">
-            |> <%= post.title %>
+            $> <%= post.title %>
         </h1>
         <% } else { %>
         <h1 itemprop="name">
-            <a href="<%- url_for(post.path) %>" style="font-style:italic;color:#42A5F5;">|> <%= post.title %></a>
+            <a href="<%- url_for(post.path) %>" style="font-style:italic;color:#42A5F5;">$> <%= post.title %></a>
         </h1>
         <% } %>
         <div class="article-meta clearfix">
