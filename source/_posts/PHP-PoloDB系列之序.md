@@ -10,7 +10,9 @@ tags:
 ## 一些想法
 学习rust有一段时间了，现在感觉遇到了瓶颈。为了更进一步，有必要接触具体的项目。
 
-在网上发现一个用rust实现DB的项目：https://github.com/vincentdchan/PoloDB；看了它的源码，但是仅仅看还不得要领，所以决定为这个库实现一个php的ffi绑定，众所周知php已经出到8.1版本了，对于FFI的支持已经很完善了。
+在网上发现一个用rust实现DB的项目：https://github.com/vincentdchan/PoloDB；
+
+简略地看了它的源码，但是仅仅看还不得要领，所以决定为这个库实现一个php的ffi绑定，众所周知php已经出到8.1版本了，对于FFI的支持已经很完善了。
 
 <!-- more -->
 
