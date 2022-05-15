@@ -1,13 +1,11 @@
 ---
-title: SwordOffer丑数.md
+title: SwordOffer丑数
 date: 2022-05-15 17:37:00
 tags: 
-- 算法
+- 刷题
 ---
 
 ## 题目
-
-[剑指offer.49题(LeetCode地址)](https://leetcode.cn/problems/chou-shu-lcof/)
 
 > 我们把只包含质因子 2、3 和 5 的数称作丑数（Ugly Number）。求按从小到大的顺序的第 n 个丑数。
 
@@ -19,6 +17,9 @@ tags:
 输出：12
 解释: 1, 2, 3, 4, 5, 6, 8, 9, 10, 12 是前 10 个丑数。
 ```
+
+附上链接：[剑指offer.49题(LeetCode地址)](https://leetcode.cn/problems/chou-shu-lcof/)
+
 
 ## 解题
 
