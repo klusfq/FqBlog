@@ -6,7 +6,7 @@ tags:
 - Rust
 ---
 
-### 类型转换
+### 类型转换记录
 
 <!-- more -->
 
@@ -26,4 +26,11 @@ let tmp_vec: Vec<u8> = tmp_slice.to_vec();
 let tmp_vec = vec![240, 159, 146, 150];
 
 let sparkle_heart = String::from_utf8(tmp_vec).unwrap();
+```
+
+#### String转i32
+```rust
+let tmp_string = String::from("12");
+
+let tmp_int = tmp_string.parse::<i32>().unwrap();
 ```
