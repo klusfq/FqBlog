@@ -34,3 +34,6 @@ rust -> FFI -> 动态链接库 -> FFI -> PHP
 
 
 ## 汇总
+
+`PoloDB`项目是仿照MongoDB去实现的接口，所有有些概念需要提前认知一下：
+![](/images/mongodb_concept.png)
