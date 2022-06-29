@@ -11,6 +11,8 @@ tags:
 
 本文，将开始研究Polodb新增数据功能的实现。
 
+<!-- more -->
+
 ```c
 int PLDB_insert(Database* db, uint32_t col_id, uint32_t meta_version, DbDocument* doc);
 ```
