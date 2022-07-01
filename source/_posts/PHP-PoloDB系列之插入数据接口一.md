@@ -71,4 +71,28 @@ int PLDB_doc_len(DbDocument* doc);
 
 ## 创建`PLDBValue`
 
-<font style="background-color: yellow;">TODO</font>
+关于PLDBValue结构体相关操作，头文件中也给定了以下三个功能函数。
+
+> 但是，很坑的是貌似作者并没有实现这几个方法！！！
+
+首先，`PLDB_mk_binary_value()`这个函数接收一个字节串和一个长度参数，然后返回一个PLDBValue结构体（我其实不是很理解为啥要在栈中保留这个结构体，而不是像我们已知的那些结构体一样放在堆上）。
+
+然后，`PLDB_dup_value()`这个方法，貌似就是为了复制PLDBValue用的。
+
+最后，`PLDB_free_value()`我最迷惑的就是这个函数。PLDBValue的生命周期，应该和它所在栈上下文一样吧，那么这个函数究竟是干啥呢？提前销毁这个变量吗？那只是销毁这个变量，还是连变量指向的数据也一起释放了呢？
+
+```c
+PLDBValue PLDB_mk_binary_value(const char* bytes, uint32_t size);
+
+PLDBValue PLDB_dup_value(PLDBValue val);
+
+void PLDB_free_value(PLDBValue val);
+```
+
+仔细阅读头文件，我还发现了PLDBValue相关的几个宏
+```c
+#define PLDB_NULL { PLDB_VAL_NULL, { .int_value = 0 } }
+#define PLDB_INT(x) { PLDB_VAL_INT, { .int_value = (x) } }
+#define PLDB_DOUBLE(x) { PLDB_VAL_DOUBL, { .double_value = (x) } }
+#define PLDB_BOOL(x) { PLDB_VAL_BOOLEAN, { .bool_value = !!(x) ? 1 : 0 } }
+```
