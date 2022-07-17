@@ -79,7 +79,7 @@ int PLDB_doc_len(DbDocument* doc);
 
 然后，`PLDB_dup_value()`这个方法，貌似就是为了复制PLDBValue用的。
 
-最后，`PLDB_free_value()`我最迷惑的就是这个函数。PLDBValue的生命周期，应该和它所在栈上下文一样吧，那么这个函数究竟是干啥呢？提前销毁这个变量吗？那只是销毁这个变量，还是连变量指向的数据也一起释放了呢？
+最后，`PLDB_free_value()`我最迷惑的就是这个函数。PLDBValue的生命周期，应该和它所在栈上下文一样吧，那么这个函数究竟是干啥呢？提前销毁这个变量吗？
 
 ```c
 PLDBValue PLDB_mk_binary_value(const char* bytes, uint32_t size);
@@ -87,12 +87,4 @@ PLDBValue PLDB_mk_binary_value(const char* bytes, uint32_t size);
 PLDBValue PLDB_dup_value(PLDBValue val);
 
 void PLDB_free_value(PLDBValue val);
-```
-
-仔细阅读头文件，我还发现了PLDBValue相关的几个宏
-```c
-#define PLDB_NULL { PLDB_VAL_NULL, { .int_value = 0 } }
-#define PLDB_INT(x) { PLDB_VAL_INT, { .int_value = (x) } }
-#define PLDB_DOUBLE(x) { PLDB_VAL_DOUBL, { .double_value = (x) } }
-#define PLDB_BOOL(x) { PLDB_VAL_BOOLEAN, { .bool_value = !!(x) ? 1 : 0 } }
 ```
