@@ -1,3 +1,13 @@
+---
+title: PHP-PoloDB系列之PLDBValue结构
+categories: []
+date: 2022-07-17 18:25:00
+tags:
+- PHP
+- Rust
+---
+
+
 ## 背景
 
 上文提到，在导出的动态库中，并没有实现头文件所申明的那些 `PLDBValue` 结构相关的接口。
